@@ -1,12 +1,16 @@
-var num1 = 1280;
- console.log(num1.primeFactorization());
+var myInput = document.getElementById("myInput");
+var myButton = document.getElementById("myButton");
+var myImage = document.getElementById("myImage");
+var aspectRatio;
 
-var num2 = 1024;
-console.log(num2.primeFactorization());
+var myAspectRatio = document.getElementById('myAspectRatio');
+myButton.addEventListener('click',()=>{
+  myImage.src = myInput.value;
+  myImage.addEventListener('load',()=>{
+    aspectRatio = new Ratio(myImage.width,myImage.height);
+    aspectRatio = aspectRatio.simplify();
+    myAspectRatio.innerHTML = aspectRatio.dividend + ":" + aspectRatio.divisor;
 
-var ab= new NumberPair(num1,num2);
-console.log(ab.gcd());
 
-ac = new Ratio(num1,num2);
-
-console.log(ac.simplify());
+  })
+})
