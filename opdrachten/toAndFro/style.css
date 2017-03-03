@@ -1,0 +1,10 @@
+#container{
+  width: 800px;
+  height: 600px;
+  margin: auto;
+  border: 2px black solid;
+}
+
+#canvas{
+  background-color: lightgray;
+}
